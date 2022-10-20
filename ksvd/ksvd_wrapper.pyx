@@ -10,12 +10,12 @@ cdef extern from "ksvd.hpp":
     void _KSVDNumpyWrapper(double *Dptr, double *Gammaptr,
                            double *Xptr, size_t n, size_t d, size_t p,
                            size_t target_sparsity, size_t max_iterations,
-                           map[string, double] params) except +
+                           map[string, double] params) nogil except +
 
     void _KSVDEncodeNumpyWrapper(double *Gammaptr, double *Dptr,
                              double *Xptr, size_t n, size_t d, size_t p,
                              size_t target_sparsity,
-                             map[string, double] params) except +
+                             map[string, double] params) nogil except +
 
 
 def KSVD(Xo,
